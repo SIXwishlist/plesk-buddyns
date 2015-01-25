@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<module>
+  <id>buddyns</id>
+  <name>BuddyNS</name>
+  <description>Integration with BuddyNS secondary DNS via RESTful API.</description>
+  <version>1.0</version>
+  <release>1</release>
+  <vendor>tetragroup.org</vendor>
+  <plesk_min_version>12</plesk_min_version>
+</module>
