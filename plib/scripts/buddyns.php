@@ -50,7 +50,7 @@ function buddyNSCreateZone($zoneName,$zoneIP,$key)
         if ($curl_response === false) {
             $info = curl_getinfo($curl);
             curl_close($curl); 
-            // add curl fail debug action
+            return false;
         } else {
             curl_close($curl);
             return json_decode($curl_response);
@@ -87,7 +87,7 @@ function buddyNSSyncNow($zoneName,$key)
             if ($curl_response === false) {
                 $info = curl_getinfo($curl);
                 curl_close($curl); 
-                // add curl fail debug action
+                return false;
             } else {
                 curl_close($curl);
                 return json_decode($curl_response);
@@ -118,7 +118,7 @@ function buddyNSDeleteZone($zoneName,$key)
         if ($curl_response === false) {
             $info = curl_getinfo($curl);
             curl_close($curl); 
-            // add curl fail debug action
+            return false;
         } else {
             curl_close($curl);
             return json_decode($curl_response);

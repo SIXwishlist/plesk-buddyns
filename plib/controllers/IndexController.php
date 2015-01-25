@@ -9,7 +9,6 @@ class IndexController extends pm_Controller_Action
         if (!pm_Session::getClient()->isAdmin()) { // Deny access to all except admin
             throw new pm_Exception('Permission denied');
         }
-        pm_Settings::set('IP_old', pm_Settings::get('IP'));
     }
 
     public function indexAction()
@@ -49,10 +48,7 @@ class IndexController extends pm_Controller_Action
 
         if ($this->getRequest()->isPost() && $form->isValid($this->getRequest()->getPost())) {
             pm_Settings::set('key', $form->getValue('key'));
-
-                pm_Settings::set('IP', $form->getValue('IP'));
-            
-
+            pm_Settings::set('IP', $form->getValue('IP'));
             pm_Settings::set('enabled', $form->getValue('enabled'));
 
             $this->_status->addMessage('info', $this->lmsg('authDataSaved'));
